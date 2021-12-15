@@ -1,4 +1,21 @@
-# Docker ELK stack for pfSense
+# Docker ELK stack
+
+- [Docker ELK stack](#docker-elk-stack)
+- [Screenshot](#screenshot)
+- [Requirements](#requirements)
+  - [Setup](#setup)
+  - [SELinux](#selinux)
+- [Usage](#usage)
+- [Configuration](#configuration)
+  - [How can I tune Kibana configuration?](#how-can-i-tune-kibana-configuration)
+  - [How can I tune Logstash configuration?](#how-can-i-tune-logstash-configuration)
+  - [How can I specify the amount of memory used by Logstash?](#how-can-i-specify-the-amount-of-memory-used-by-logstash)
+  - [How can I enable a remote JMX connection to Logstash?](#how-can-i-enable-a-remote-jmx-connection-to-logstash)
+  - [How can I tune Elasticsearch configuration?](#how-can-i-tune-elasticsearch-configuration)
+- [Storage](#storage)
+  - [How can I store Elasticsearch data?](#how-can-i-store-elasticsearch-data)
+- [Deployment via Portainer](#deployment-via-portainer)
+  - [Requirements](#requirements-1)
 
 This is a fork of deviantony/docker-elk taylored to pfSense log parsing.
 
@@ -173,3 +190,10 @@ elasticsearch:
 ```
 
 This will store elasticsearch data inside `/path/to/storage`.
+
+# Deployment via Portainer
+
+## Requirements
+
+- Docker-in-Docker
+- /:/hostfiles

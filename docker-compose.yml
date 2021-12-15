@@ -16,8 +16,8 @@ logstash:
   build: logstash/
   command: logstash -f /etc/logstash/conf.d/logstash.conf
   volumes:
-    - ./logstash/config:/etc/logstash/conf.d
-    - /etc/localtime:/etc/localtime
+    - ${HOSTFILES}/opt/logstash/config:/etc/logstash/conf.d
+    - ${HOSTFILES}/etc/localtime:/etc/localtime
   log_driver: "json-file"
   log_opt:
     max-size: "50m"
@@ -29,8 +29,8 @@ logstash:
 kibana:
   build: kibana/
   volumes:
-    - ./kibana/config/kibana.yml:/opt/kibana/config/kibana.yml
-    - /etc/localtime:/etc/localtime
+    - ${HOSTFILES}/kibana/config/kibana.yml:/opt/kibana/config/kibana.yml
+    - ${HOSTFILES}/etc/localtime:/etc/localtime
   log_driver: "json-file"
   log_opt:
     max-size: "50m"
